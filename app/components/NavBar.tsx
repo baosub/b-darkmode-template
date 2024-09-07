@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
   const { toggleTheme, themeMode } = useThemeContext();
 
   return (
-    <AppBar position="static" color='secondary'>
+    <AppBar position="static" color='primary'>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Mi Aplicación

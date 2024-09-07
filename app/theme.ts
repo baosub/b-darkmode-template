@@ -13,12 +13,6 @@ const roboto = Roboto({
 const lightTheme: ThemeOptions = {
   palette: {
     mode: 'light',
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#dc004e',
-    },
   },
   typography: {
     fontFamily: roboto.style.fontFamily,
@@ -28,12 +22,6 @@ const lightTheme: ThemeOptions = {
 const darkTheme: ThemeOptions = {
   palette: {
     mode: 'dark',
-    primary: {
-      main: '#bb86fc',
-    },
-    secondary: {
-      main: '#03dac6',
-    },
   },
   typography: {
     fontFamily: roboto.style.fontFamily,
