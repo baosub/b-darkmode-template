@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
 
-        <AppRouterCacheProvider>
+        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <CustomThemeProvider>
             <Navbar />
             {children}
