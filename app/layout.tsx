@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { CustomThemeProvider } from "./theme-context";
-import Navbar from "./components/NavBar";
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +19,6 @@ export default function RootLayout({
 
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <CustomThemeProvider>
-            <Navbar />
             {children}
           </CustomThemeProvider>
         </AppRouterCacheProvider>

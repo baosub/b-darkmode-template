@@ -1,45 +1,39 @@
 'use client'
 
-import { Button, Typography } from '@mui/material'
 import React from 'react'
-import { useTheme } from '@mui/material/styles';
+import { useState } from 'react';
+import { Container, CssBaseline } from '@mui/material';
+import Header from './components/Header';
+import Chat from './components/Chat';
+import MessageInput from './components/MessageInput';
+
+
 
 
 const page = () => {
-  const theme = useTheme(); // Accede al tema actual
+  const [messages, setMessages] = useState<string[]>([]);
+  const [userInput, setUserInput] = useState<string>('');
+  
+  const handleSendMessage = () => {
+    if (userInput.trim()) {
+      setMessages(prev => [...prev, userInput]);
+      setUserInput('');
+      // Aquí llamarías a la API para procesar el mensaje si fuera necesario.
+    }
+  };
+
+  
   return (
-    <div>
-      page
-      <Button>Hello</Button>
-      <Typography variant='h1'>Hello</Typography>
-
-       <Button variant='contained' >Hello</Button>
-      <Button sx={{ 
-
-         
-        }}>Hello</Button>
-
-<Button
-      sx={{
-        backgroundColor: theme.palette.primary.main,
-        color: theme.palette.getContrastText(theme.palette.primary.main),
-        '&:hover': {
-          backgroundColor: theme.palette.primary.dark,
-        },
-      }}
-    >
-      Themed Button
-    </Button>
-
-    <Button variant='contained'  sx={{padding: '30px', borderRadius: '50px', backgroundColor: '#25d366', color: 'white',
-      '&:hover': {
-          backgroundColor: '#128c7e',
-        },
-    }}
-    
-    >This is a custom button</Button>
-              
-    </div>
+    <Container component="main" maxWidth="md">
+    <CssBaseline />
+    <Header />
+    <Chat messages={messages} />
+    <MessageInput
+      value={userInput}
+      onChange={e => setUserInput(e.target.value)}
+      onSend={handleSendMessage}
+    />
+  </Container>
   )
 }
 
